@@ -46,14 +46,14 @@ public class CarrinhoDeCompras {
 	
 		public double valorTotal() {
 			Map<Produto, Integer> map = contarProdutos();			
-			Set<Produto> chaves = contarProdutos().keySet();
+			Set<Produto> chaves = map.keySet();
 			double valorTotal = 0;
 			for (Produto chave : chaves)
 			{
 				if(chave != null) {
 					double precoProduto = chave.getPreco();
 					int quantidade = map.get(chave);
-					valorTotal = precoProduto * quantidade;
+					valorTotal += precoProduto * quantidade;
 				}
 			}
 			return valorTotal;
